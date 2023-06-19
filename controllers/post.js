@@ -1,6 +1,18 @@
 const db = require('../models/post');
 const all = async(req,res,next)=>{
-    let data = await db.find();
+    let data = await db.aggregate([
+      {
+        $lookup: {
+          from: "users",
+          localField: "user_id",
+          foreignField: "user_id",
+          as: "User_books",
+        },
+      },
+      {$project: {
+        authors: 0,categories:0
+      }}
+    ])
     res.status(200).send({ data: data });
 }
 

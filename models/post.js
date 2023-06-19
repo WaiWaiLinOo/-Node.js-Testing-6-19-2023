@@ -9,6 +9,7 @@ const authorSchema = new Schema({
     authors: [authorSchema],
     categories: [String],
     price: Number,
+    user_id: Number,
   });
 const Book = mongoose.model("book", bookSchema);
 module.exports = Book
