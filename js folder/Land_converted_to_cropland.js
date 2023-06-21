@@ -1,0 +1,81 @@
+[
+    {
+        "type": "Fuel Type",
+        "methods": [
+          {
+            "sourceOfEmission": "Crop type: perennial cropland",
+            "co2Factor": null,
+            "ch4Factor": 2.1,
+            "n2oFactor": null,
+            "baseUnit": "ha",
+            "source": "IPCC",
+            "urlName": "IPCC Emission Factor Database",
+            "sheetName": "output.xls",
+            "file": "/upload/ef/output.xls",
+            "link": "https://www.ipcc-nggip.iges.or.jp/EFDB/find_ef.php?ipcc_code=3&ipcc_level=0",
+            "year": "2014",
+            "emissionUnit": "kgCO₂",
+            "ch4Unit": "tonnes C",
+            "n2oUnit": "kgN₂O",
+            "type": "Climate region: temperate (all moisture regimes)"
+          },
+          {
+            "sourceOfEmission": "Crop type: perennial cropland",
+            "co2Factor": null,
+            "ch4Factor": 1.8,
+            "n2oFactor": null,
+            "baseUnit": "ha",
+            "source": "IPCC",
+            "urlName": "IPCC Emission Factor Database",
+            "sheetName": "output.xls",
+            "file": "/upload/ef/output.xls",
+            "link": "https://www.ipcc-nggip.iges.or.jp/EFDB/find_ef.php?ipcc_code=3&ipcc_level=0",
+            "year": "2014",
+            "emissionUnit": "kgCO₂",
+            "ch4Unit": "tonnes C",
+            "n2oUnit": "kgN₂O",
+            "type": "Climate region: tropical, dry"
+          },
+          {
+            "sourceOfEmission": "Crop type: perennial cropland",
+            "co2Factor": null,
+            "ch4Factor": 2.6,
+            "n2oFactor": null,
+            "baseUnit": "ha",
+            "source": "IPCC",
+            "urlName": "IPCC Emission Factor Database",
+            "sheetName": "output.xls",
+            "file": "/upload/ef/output.xls",
+            "link": "https://www.ipcc-nggip.iges.or.jp/EFDB/find_ef.php?ipcc_code=3&ipcc_level=0",
+            "year": "2014",
+            "emissionUnit": "kgCO₂",
+            "ch4Unit": "tonnes C",
+            "n2oUnit": "kgN₂O",
+            "type": "Climate region: tropical, moist"
+          },
+          {
+            "sourceOfEmission": "Crop type: perennial cropland",
+            "co2Factor": null,
+            "ch4Factor": 10,
+            "n2oFactor": null,
+            "baseUnit": "ha",
+            "source": "IPCC",
+            "urlName": "IPCC Emission Factor Database",
+            "sheetName": "output.xls",
+            "file": "/upload/ef/output.xls",
+            "link": "https://www.ipcc-nggip.iges.or.jp/EFDB/find_ef.php?ipcc_code=3&ipcc_level=0",
+            "year": "2014",
+            "emissionUnit": "kgCO₂",
+            "ch4Unit": "tonnes C",
+            "n2oUnit": "kgN₂O",
+            "type": "Climate region: tropical, wet"
+          }
+        ],
+        "scope": "scope1",
+        "typeOfEmission": "Land Converted to Cropland",
+        "category": "Land Use, Land Use Change and Forestry (LULUCF)",
+        "categoryKey": "category",
+        "nameKey": "fuelType",
+        "sourceType": "Fuel Type"
+    }
+]

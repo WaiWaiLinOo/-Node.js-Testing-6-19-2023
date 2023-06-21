@@ -1,66 +1,34 @@
-const express = require("express");
-const app = express();
-app.use(express.json());
-const mongoose = require("mongoose");
-mongoose.connect(`mongodb://localhost:27017/blog`);
-const { Schema } = mongoose;
+const originalData = [
+  {
+    type: "Region: Africa and Middle East",
+    sourceOfEmission: "Animal category: Cattle (Other Cattle)",
+    ch4Factor: 31,
+  },
+  {
+    type: "Region: Indian Subcontinent",
+    sourceOfEmission: "Animal category: Cattle (Dairy)",
+    ch4Factor: 58,
+  },
+];
 
-const UserSchema = new Schema({
-  user_id: { type: Number, required: true },
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  date: { type: Date, default: Date.now },
-});
+const template = {
+  sourceOfEmission: "",
+  co2Factor: null,
+  ch4Factor: null,
+  n2oFactor: null,
+  baseUnit: "",
+  source: "",
+  urlName: "",
+  sheetName: "",
+  file: "",
+  link: "",
+  year: "",
+  emissionUnit: "",
+  ch4Unit: "",
+  n2oUnit: "",
+  type: "",
+};
 
-const authorSchema = new Schema({
-  name: String,
-  age: Number,
-});
-const bookSchema = new Schema({
-  title: String,
-  authors: [authorSchema],
-  categories: [String],
-  price: Number,
-});
+const newData = originalData.map((item) => Object.assign({}, template, item));
 
-const User = mongoose.model("user", UserSchema);
-const Book = mongoose.model("book", bookSchema);
-
-app.get("/users", async (req, res, next) => {
-  let data = await User.find();
-  res.status(200).send({ data: data });
-});
-
-app.post("/users", async (req, res, next) => {
-  console.log("data==========>", req.body);
-  const input = req.body;
-  let result = await new User({
-    user_id: input.user_id,
-    name: input.name,
-    email: input.email,
-    date: input.date,
-  }).save();
-  if (result) {
-    res.status(200).send({ data: result, message: "User Save Successfully" });
-  } else {
-    res.status(300).send("Fail");
-  }
-});
-
-app.post("/books", async (req, res, next) => {
-  console.log("data==========>", req.body);
-  const input = req.body;
-  let result = await new Book(input).save();
-  if (result) {
-    res.status(200).send({ data: result, message: "Books Save Successfully" });
-  } else {
-    res.status(300).send("Fail");
-  }
-});
-
-app.get("/books", async (req, res, next) => {
-  let data = await Book.find();
-  res.status(200).send({ data: data });
-});
-
-app.listen(3000, console.log("Server is running"));
+console.log(JSON.stringify(newData, null, 4));
